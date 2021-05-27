@@ -1,0 +1,23 @@
+<h1>
+  Weather Forecast for {{city}}
+</h1>
+<mat-grid-list cols="5" rowHeight="100px">
+  <mat-grid-tile  *ngFor="let x of forecastModels"
+      [colspan]=1
+      [rowspan]=5>              
+        <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            {{x.date| date:'dd/MM/yyyy'}}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>          
+          <div>Temperature {{x.temperature}}°C</div>
+          <div class = "icon">
+            <img src="http://openweathermap.org/img/wn/{{x.icon}}@2x.png">
+        </div>
+    <div>Sealevel {{x.sealevel}} hPa</div>                 
+        </mat-card-content>
+        </mat-card>    
+  </mat-grid-tile>
+</mat-grid-list>
